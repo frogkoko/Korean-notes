@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <style>
+        :root {
+            --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
+            --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, .251) 3%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+            --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(207, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
+            --bg-gradient-yellow2: linear-gradient(135deg, hsla(45, 100%, 71%, .251) 0%, hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
+            --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+            --text-gradient-yellow: linear-gradient(to right, hsl(207, 100%, 72%), hsl(226, 100%, 68%));
+
+            --jet: hsl(0, 0%, 22%);
+            --onyx: hsl(240, 1%, 17%);
+            --eerie-black1: hsl(240, 2%, 13%);
+            --eerie-black2: hsl(240, 2%, 12%);
+            --smoky-black: hsl(0, 0%, 7%);
+            --white1: hsl(0, 0%, 100%);
+            --white2: hsl(0, 0%, 98%);
+            --light-gray: hsl(0, 0%, 84%);
+            --light-gray70: hsla(0, 0%, 84%, .7);
+
+            --ff-poppins: 'Poppins', sans-serif;
+
+            --fs1: 24px;
+            --fs2: 18px;
+            --fs3: 17px;
+            --fs4: 16px;
+            --fs5: 15px;
+            --fs6: 14px;
+            --fs7: 13px;
+            --fs8: 12px;
+
+            --fw300: 300;
+            --fw400: 400;
+            --fw500: 500;
+            --fw600: 600;
+
+            --shadow1: -4px 8px 24px hsla(0, 0%, 0%, .25);
+            --shadow2: 0px 16px 30px hsla(0, 0%, 0%, .25);
+            --shadow3: 0px 16px 40px hsla(0, 0%, 0%, .25);
+
+            --transition1: .25s ease;
+            --transition2: .5s ease-in-out;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a { text-decoration: none; }
+        li { list-style: none; }
+        img, ion-icon, a, button, time, span { display: block; }
+
+        button {
+            font: inherit;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        input, textarea {
+            display: block;
+            width: 100%;
+            background: none;
+            font: inherit;
+        }
+
+        ::selection {
+            background: var(--orange-yellow-crayola);
+            color: var(--smoky-black);
+        }
+
+        :focus { outline-color: var(--orange-yellow-crayola); }
+
+        html { font-family: var(--ff-poppins); }
+        body { background: var(--smoky-black); }
+
+        main {
+            margin: 15px 12px;
+            margin-bottom: 75px;
+            min-width: 259px;
+        }
+
+        article { 
+            display: none;
+            animation: fade .5s ease backwards;
+        }
+
+        article.active { display: block; }
+
+        @keyframes fade {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .h2, .h3, .h4 { 
+            color: var(--white2);
+            text-transform: capitalize;
+        }
+
+        .h2 { font-size: var(--fs1); }
+        .h3 { font-size: var(--fs2); }
+        .h4 { font-size: var(--fs4); }
+
+        .kor-title {
+            position: relative;
+            padding-bottom: 7px;
+        }
+
+        .kor-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--text-gradient-yellow);
+            border-radius: 3px;
+        }
+
+        /* ABOUT */
+
+        .about .kor-title { 
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+
+        .about-text {
+            color: var(--light-gray);
+            font-size: var(--fs6);
+            font-weight: var(--fw300);
+            line-height: 1.6;
+        }
+
+        .about-text p { 
+            margin-bottom: 15px;
+            text-align: justify;
+            padding: 0 10px;
+        }
+
+        .service { margin-bottom: 35px; }
+
+        .kor-title { margin-bottom: 20px; }
+
+        .kor-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .kor-item {
+            position: relative;
+            background: var(--border-gradient-onyx);
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: var(--shadow2);
+            z-index: 1;
+        }
+
+        .kor-item::before {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: var(--bg-gradient-jet);
+            border-radius: inherit;
+            z-index: -1;
+        }
+
+        .kor-icon-box { margin-bottom: 10px; }
+        .kor-icon-box img { margin: auto; }
+
+        .kor-content-box { text-align: center; }
+
+        .kor-item-title { margin-bottom: 7px; }
+
+        .kor-item-text {
+            color: var(--light-gray);
+            font-size: var(--fs6);
+            font-weight: var(--fw300);
+            line-height: 1.6;
+        }
+
+        /* MEDIA QUERIES */
+
+        @media (min-width: 580px) {
+            :root {
+                --fs1: 32px;
+                --fs2: 24px;
+                --fs3: 26px;
+                --fs4: 18px;
+                --fs6: 15px;
+                --fs7: 15px;
+                --fs8: 12px;
+            }
+
+            article {
+                width: 520px;
+                margin-inline: auto;
+                padding: 30px;
+            }
+
+            .kor-title {
+                font-weight: var(--fw600);
+                padding-bottom: 15px;
+            }
+
+            .kor-title::after {
+                width: 40px;
+                height: 5px;
+            }
+
+            main {
+                margin-top: 60px;
+                margin-bottom: 100px;
+            }
+
+            .about .kor-title { margin-bottom: 20px; }
+            .about-text { margin-bottom: 40px; }
+
+            .kor-item {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 18px;
+                padding: 30px;
+            }
+
+            .kor-icon-box { margin: 5px 0 0 0; }
+            .kor-content-box { text-align: left; }
+        }
+
+        @media (min-width: 768px) {
+            article { width: 700px; }
+
+            .kor-title { padding-bottom: 20px; }
+        }
+
+        @media (min-width: 1024px) {
+            article {
+                width: 950px;
+                box-shadow: var(--shadow2);
+            }
+
+            main { margin-bottom: 60px; }
+
+            .kor-list { grid-template-columns: 1fr 1fr; gap: 20px 25px; }
+        }
+
+        @media (min-width: 1250px) {
+            article { width: auto; }
+
+            main {
+                max-width: 1200px;
+                margin-inline: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="main-content">
+            <article class="about active" data-page="about">
+                <header>
+                    <h2 class="h2 kor-title"></h2>
+                </header>
+
+                <section class="service">
+                    <h3 class="h3 kor-title">Korean Notes</h3>
+
+                    <ul class="kor-list">
+
+                        <li class="kor-item">
+                        
+                            <div class="kor-content-box">
+                                  <a href="kor-numbers/index.html">
+                                <h4 class="h4 kor-item-title">Korean writing Numbers</h4>
+                                <p class="kor-item-text">Learn to read and write Korean numbers (Sino and Native) </p>
+                          </a>
+                            </div>
+                        </li>
+
+                         <li class="kor-item">
+                        
+                            <div class="kor-content-box">
+                                  <a href="kor-alphabet/index.html">
+                                <h4 class="h4 kor-item-title">Korean writing hangul</h4>
+                                <p class="kor-item-text">Learn to read and write Korean hangul  </p>
+                          </a>
+                            </div>
+                        </li>
+
+                    
+
+                     
+                        <!--
+                        <li class="kor-item">
+                          
+                            <div class="kor-icon-box">
+                                <img src="https://i.postimg.cc/0NL8korpx/icon-photo.png" alt="Photography icon" width="40" height="40">
+                            </div> 
+                            <div class="kor-content-box">
+                                <h4 class="h4 kor-item-title">Photography</h4>
+                                <p class="kor-item-text">I make high-quality photos of any category at a professional level.</p>
+                            </div>
+                        </li>
+                    -->
+                    </ul>
+                </section>
+            </article>
+        </div>
+    </main>
+</body>
+</html>
