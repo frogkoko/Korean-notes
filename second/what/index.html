@@ -22,8 +22,8 @@
         }
 
         .main {
-            max-width: 1200px;
-            margin: 0 auto;
+           
+            
             padding: 20px;
             flex-grow: 1;
         }
@@ -198,37 +198,14 @@
         }
 
         .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 25px;
             list-style: none;
             margin-bottom: 40px;
         }
 
-        /* Special full-width cards */
-        .full-width-card {
-            grid-column: 1 / -1;
-        }
-
-        #basic-questions-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        #basic-questions-grid .full-width-card {
-            grid-column: 1 / -1;
-        }
-
-        #object-questions-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        #time-questions-grid {
-            grid-template-columns: 1fr;
-        }
-
-        #activity-questions-grid {
-            grid-template-columns: 1fr;
-        }
+       
 
         .card {
             background: white;
@@ -240,6 +217,7 @@
             flex-direction: column;
             border: 1px solid #f0f0f0;
             height: 480px; /* Fixed height for all cards */
+            width: 100%; /* Ensure card takes full width */
         }
 
         .card:hover {
@@ -331,50 +309,13 @@
             margin-top: 8px;
         }
 
-        /* Adjust full-width cards to maintain proportions */
-        .full-width-card .card {
-            height: 480px; /* Same height as regular cards */
+        /* Remove full-width card styles as all cards are full width now */
+        .full-width-card {
+            /* No special styling needed */
         }
 
-        .full-width-card .sketch {
-            height: 250px; /* Same height as regular cards */
-        }
-
-        @media (min-width: 992px) {
-            .cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            #basic-questions-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            #object-questions-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            #time-questions-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            #activity-questions-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        /* Remove all grid-related media queries */
         @media (max-width: 991px) {
-            .cards {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-            
-            #basic-questions-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            #object-questions-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
             .card {
                 height: 450px; /* Slightly smaller on medium screens */
             }
@@ -387,18 +328,6 @@
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2.2rem;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-            
-            #basic-questions-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            #object-questions-grid {
-                grid-template-columns: 1fr;
             }
             
             .card {
@@ -593,10 +522,9 @@
 
         function createCard(koreanData, index, isPhrase = false) {
             const cardClass = isPhrase ? 'card phrase-card' : 'card';
-            const fullWidthClass = koreanData.fullWidth ? 'full-width-card' : '';
             
             return `
-                <li class="cards_item ${fullWidthClass}">
+                <li class="cards_item">
                     <div class="${cardClass}">
                         <div class="sketch">
                             <canvas class="paint" width="300" height="200" data-index="${index}"></canvas>

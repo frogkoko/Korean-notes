@@ -6,463 +6,401 @@
     <title>한국어 - Korean "Why" Questions</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-            min-height: 100vh;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    min-height: 100vh;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
 
-        .main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            flex-grow: 1;
-        }
+.main {
+    padding: 20px;
+    flex-grow: 1;
+}
 
-        .header {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            padding-top: 20px;
-        }
+.header {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
 
-        .header h1 {
-            font-size: 2.8rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #3498db;
-        }
+.header h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #3498db;
+}
 
-        .header p {
-            font-size: 1.1rem;
-            color: #7f8c8d;
-        }
+.header p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
 
-        .header-nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+.header-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-        .back-button {
-            background: #3498db;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e0e0e0;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
-        }
+.back-button {
+    background: #3498db;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
 
-        .back-button:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
-        }
+.back-button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
 
-        .sticky-nav-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            padding: 15px 20px;
-        }
+.sticky-nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+}
 
-        #navbar {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 15px 20px;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin: 0;
-            max-width: none;
-        }
+#navbar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 0;
+    max-width: none;
+}
 
-        #navbar a {
-            background: white;
-            color: #3498db;
-            padding: 5px 24px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e0e0e0;
-        }
+#navbar a {
+    background: white;
+    color: #3498db;
+    padding: 5px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
 
-        #navbar a:hover, #navbar a.active {
-            background: #3498db;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
-        }
+#navbar a:hover, #navbar a.active {
+    background: #3498db;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
 
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-        .tts-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
+.tts-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .tts-button {
-            background: #2ecc71;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+.tts-button {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
-        .tts-button:hover {
-            background: #27ae60;
-            transform: translateY(-2px);
-        }
+.tts-button:hover {
+    background: #27ae60;
+    transform: translateY(-2px);
+}
 
-        .tts-button:disabled {
-            background: #95a5a6;
-            cursor: not-allowed;
-            transform: none;
-        }
+.tts-button:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+    transform: none;
+}
 
-        .voice-selector {
-            padding: 10px 15px;
-            border-radius: 25px;
-            border: 1px solid #ddd;
-            background: white;
-            color: #333;
-            font-family: 'Poppins', sans-serif;
-        }
+.voice-selector {
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    background: white;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
 
-        .tts-info {
-            text-align: center;
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
+.tts-info {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
 
-        .section-title {
-            text-align: center;
-            color: #2c3e50;
-            font-size: 1.8rem;
-            margin: 60px 0 30px 0;
-            font-family: 'Noto Serif KR', serif;
-        }
+.section-title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin: 60px 0 30px 0;
+    font-family: 'Noto Serif KR', serif;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            list-style: none;
-            margin-bottom: 40px;
-        }
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    list-style: none;
+    margin-bottom: 40px;
+}
 
-        /* Special full-width cards */
-        .full-width-card {
-            grid-column: 1 / -1;
-        }
+/* Remove grid-specific styles since all cards are now full width */
+.full-width-card {
+    /* No special styling needed - all cards are full width */
+}
 
-        #basic-questions-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
+#basic-questions-grid,
+#reasons-questions-grid,
+#actions-questions-grid,
+#feelings-questions-grid {
+    /* Reset to default flex behavior */
+}
 
-        #basic-questions-grid .full-width-card {
-            grid-column: 1 / -1;
-        }
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f0f0f0;
+    height: 480px; /* Fixed height for all cards */
+    width: 100%; /* Ensure card takes full width */
+}
 
-        #reasons-questions-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
 
-        #actions-questions-grid {
-            grid-template-columns: 1fr;
-        }
+.sketch {
+    position: relative;
+    padding: 20px;
+    background: #f8f9fa;
+    height: 250px; /* Fixed height for sketch area */
+    flex-shrink: 0;
+}
 
-        #feelings-questions-grid {
-            grid-template-columns: 1fr;
-        }
+.paint {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    cursor: crosshair;
+    background: white;
+    touch-action: none;
+}
 
-        .card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid #f0f0f0;
-            height: 480px; /* Fixed height for all cards */
-        }
+.erase-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    z-index: 10;
+    transition: background 0.2s ease;
+}
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-        }
+.erase-button:hover {
+    background: #c0392b;
+}
 
-        .sketch {
-            position: relative;
-            padding: 20px;
-            background: #f8f9fa;
-            height: 250px; /* Fixed height for sketch area */
-            flex-shrink: 0;
-        }
+.card_content {
+    padding: 20px;
+    text-align: center;
+    background: white;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 180px; /* Minimum height for content area */
+}
 
-        .paint {
-            width: 100%;
-            height: 100%;
-            border: 2px dashed #ddd;
-            border-radius: 10px;
-            cursor: crosshair;
-            background: white;
-            touch-action: none;
-        }
+.korean-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #3498db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    margin-bottom: 10px;
+    font-family: 'Noto Serif KR', serif;
+    line-height: 1.2;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
 
-        .erase-button {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #e74c3c;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 12px;
-            z-index: 10;
-            transition: background 0.2s ease;
-        }
+.korean-text:hover {
+    color: #e74c3c;
+    transform: scale(1.05);
+}
 
-        .erase-button:hover {
-            background: #c0392b;
-        }
+.char-info {
+    font-size: 1rem;
+    color: #7f8c8d;
+    line-height: 1.4;
+}
 
-        .card_content {
-            padding: 20px;
-            text-align: center;
-            background: white;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 180px; /* Minimum height for content area */
-        }
+/* Common Phrases Specific Styles */
+.phrase-card .korean-text {
+    font-size: 1.8rem;
+    line-height: 1.4;
+}
 
-        .korean-text {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #3498db;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            user-select: none;
-            margin-bottom: 10px;
-            font-family: 'Noto Serif KR', serif;
-            line-height: 1.2;
-            word-break: keep-all;
-            overflow-wrap: break-word;
-        }
+.phrase-card .char-info {
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
 
-        .korean-text:hover {
-            color: #e74c3c;
-            transform: scale(1.05);
-        }
+/* Remove full-width card adjustments since all cards are full width */
+.full-width-card .card,
+.full-width-card .sketch {
+    /* No special adjustments needed */
+}
 
-        .char-info {
-            font-size: 1rem;
-            color: #7f8c8d;
-            line-height: 1.4;
-        }
+/* Remove all grid-related media queries since we're using flexbox */
+@media (max-width: 991px) {
+    .card {
+        height: 450px; /* Slightly smaller on medium screens */
+    }
+    
+    .sketch {
+        height: 230px;
+    }
+}
 
-        /* Common Phrases Specific Styles */
-        .phrase-card .korean-text {
-            font-size: 1.8rem;
-            line-height: 1.4;
-        }
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .card {
+        height: 420px; /* Adjusted for mobile */
+    }
+    
+    .sketch {
+        height: 200px;
+    }
 
-        .phrase-card .char-info {
-            font-size: 0.9rem;
-            margin-top: 8px;
-        }
+    .header-nav-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .back-button {
+        align-self: flex-start;
+        margin-bottom: 10px;
+    }
+    
+    #navbar {
+        width: 100%;
+        justify-content: center;
+    }
 
-        /* Adjust full-width cards to maintain proportions */
-        .full-width-card .card {
-            height: 480px; /* Same height as regular cards */
-        }
+    #navbar a {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
 
-        .full-width-card .sketch {
-            height: 250px; /* Same height as regular cards */
-        }
+    .tts-controls {
+        flex-direction: column;
+    }
+    
+    .korean-text {
+        font-size: 2rem;
+    }
+}
 
-        @media (min-width: 992px) {
-            .cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            #basic-questions-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            #reasons-questions-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            #actions-questions-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            #feelings-questions-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+@media (max-width: 576px) {
+    .main {
+        padding: 10px;
+    }
 
-        @media (max-width: 991px) {
-            .cards {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-            
-            #basic-questions-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            #reasons-questions-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .card {
-                height: 450px; /* Slightly smaller on medium screens */
-            }
-            
-            .sketch {
-                height: 230px;
-            }
-        }
+    #navbar {
+        padding: 10px;
+    }
 
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.2rem;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-            
-            #basic-questions-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            #reasons-questions-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .card {
-                height: 420px; /* Adjusted for mobile */
-            }
-            
-            .sketch {
-                height: 200px;
-            }
-
-            .header-nav-container {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .back-button {
-                align-self: flex-start;
-                margin-bottom: 10px;
-            }
-            
-            #navbar {
-                width: 100%;
-                justify-content: center;
-            }
-
-            #navbar a {
-                padding: 10px 18px;
-                font-size: 0.9rem;
-            }
-
-            .tts-controls {
-                flex-direction: column;
-            }
-            
-            .korean-text {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .main {
-                padding: 10px;
-            }
-
-            #navbar {
-                padding: 10px;
-            }
-
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .card {
-                height: 400px; /* Further adjusted for small mobile */
-            }
-            
-            .sketch {
-                height: 180px;
-            }
-            
-            .korean-text {
-                font-size: 1.8rem;
-            }
-        }
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .card {
+        height: 400px; /* Further adjusted for small mobile */
+    }
+    
+    .sketch {
+        height: 180px;
+    }
+    
+    .korean-text {
+        font-size: 1.8rem;
+    }
+}
     </style>
 </head>
 <body>
