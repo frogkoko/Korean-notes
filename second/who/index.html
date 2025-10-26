@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한국어 - Korean "Where" Questions</title>
+    <title>한국어 - Korean "Who" Questions</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -376,7 +376,7 @@
 <body>
     <div class="main">
         <div class="header">
-            <h1><br>Korean "Where" Questions</h1>
+            <h1><br>Korean "Who" Questions</h1>
             <p>Draw in the white canvas area to practice writing</p>
             <p>Click on Korean text to hear pronunciation</p>
         </div>
@@ -385,10 +385,10 @@
             <div class="nav-content">
                 <a href="../../index.html" class="back-button">← Back to Main</a>
                 <nav id="navbar">
-                    <a class="active" href="#basic-questions">Basic "Where"</a>
-                    <a href="#location-questions">Locations</a>
-                    <a href="#place-questions">Places</a>
-                    <a href="#activity-questions">Activities</a>
+                    <a class="active" href="#basic-questions">Basic "Who"</a>
+                    <a href="#person-questions">People</a>
+                    <a href="#identity-questions">Identity</a>
+                    <a href="#relationship-questions">Relationships</a>
                 </nav>
             </div>
         </div>
@@ -405,65 +405,65 @@
         
         <!-- Section 1: Basic Questions -->
         <section id="basic-questions">
-            <h2 class="section-title">Basic "Where" Questions<br/>기본 "어디" 질문</h2>
+            <h2 class="section-title">Basic "Who" Questions<br/>기본 "누구" 질문</h2>
             <ul class="cards" id="basic-questions-grid"></ul>
         </section>
 
-        <!-- Section 2: Location Questions -->
-        <section id="location-questions">
-            <h2 class="section-title">Asking About Object Locations<br/>물건의 위치에 대해 묻기</h2>
-            <ul class="cards" id="location-questions-grid"></ul>
+        <!-- Section 2: Person Questions -->
+        <section id="person-questions">
+            <h2 class="section-title">Asking About People<br/>사람에 대해 묻기</h2>
+            <ul class="cards" id="person-questions-grid"></ul>
         </section>
 
-        <!-- Section 3: Place Questions -->
-        <section id="place-questions">
-            <h2 class="section-title">Asking About Specific Places<br/>구체적인 장소에 대해 묻기</h2>
-            <ul class="cards" id="place-questions-grid"></ul>
+        <!-- Section 3: Identity Questions -->
+        <section id="identity-questions">
+            <h2 class="section-title">Asking About Identity<br/>신원에 대해 묻기</h2>
+            <ul class="cards" id="identity-questions-grid"></ul>
         </section>
 
-        <!-- Section 4: Activity Questions -->
-        <section id="activity-questions">
-            <h2 class="section-title">Asking About Activity Locations<br/>활동 장소에 대해 묻기</h2>
-            <ul class="cards" id="activity-questions-grid"></ul>
+        <!-- Section 4: Relationship Questions -->
+        <section id="relationship-questions">
+            <h2 class="section-title">Asking About Relationships<br/>관계에 대해 묻기</h2>
+            <ul class="cards" id="relationship-questions-grid"></ul>
         </section>
     </div>
 
     <script>
         const koreanContent = {
             basicQuestions: [
-                { korean: '어디예요?', romanized: 'eodiyeyo?', meaning: 'Where is it?' },
-                { korean: '어디입니까?', romanized: 'eodiimnikka?', meaning: 'Where is it? (formal)' },
-                { korean: '어디에 있어요?', romanized: 'eodie isseoyo?', meaning: 'Where is it located?' },
-                { korean: '어디로 가요?', romanized: 'eodiro gayo?', meaning: 'Where are you going?' },
-                { korean: '어디에서 만날까요?', romanized: 'eodieseo mannalkkayo?', meaning: 'Where shall we meet?' },
-                { korean: '어디에 살아요?', romanized: 'eodie sarayo?', meaning: 'Where do you live?' }
+                { korean: '누구예요?', romanized: 'nuguyeyo?', meaning: 'Who is it?' },
+                { korean: '누구입니까?', romanized: 'nuguimnikka?', meaning: 'Who is it? (formal)' },
+                { korean: '누가 왔어요?', romanized: 'nuga wasseoyo?', meaning: 'Who came?' },
+                { korean: '누가 했어요?', romanized: 'nuga haesseoyo?', meaning: 'Who did it?' },
+                { korean: '누구를 찾아요?', romanized: 'nugureul chajayo?', meaning: 'Who are you looking for?' },
+                { korean: '누구랑 갈 거예요?', romanized: 'nugurang gal geoyeyo?', meaning: 'Who will you go with?' }
             ],
-            locationQuestions: [
-                { korean: '이것은 어디에 있어요?', romanized: 'igeoseun eodie isseoyo?', meaning: 'Where is this located?' },
-                { korean: '그것은 어디에 두었어요?', romanized: 'geugeoseun eodie dueosseoyo?', meaning: 'Where did you put that?' },
-                { korean: '저것은 어디에서 샀어요?', romanized: 'jeogeoseun eodieseo sasseoyo?', meaning: 'Where did you buy that?' },
-                { korean: '이것은 어디입니까?', romanized: 'igeoseun eodiimnikka?', meaning: 'Where is this? (formal)' },
-                { korean: '어디에서 왔어요?', romanized: 'eodieseo wasseoyo?', meaning: 'Where are you from?' },
-                { korean: '어디까지 갈 거예요?', romanized: 'eodikkaji gal geoyeyo?', meaning: 'How far will you go?' },
-                { korean: '어디에 가고 싶어요?', romanized: 'eodie gago sipeoyo?', meaning: 'Where do you want to go?' },
-                { korean: '어디에서 일해요?', romanized: 'eodieseo ilhaeyo?', meaning: 'Where do you work?' },
-                { korean: '어디에서 그 영화를 봤어요?', romanized: 'eodieseo geu yeonghwareul bwasseoyo?', meaning: 'Where did you watch that movie?' }
+            personQuestions: [
+                { korean: '이 사람은 누구예요?', romanized: 'i sarameun nuguyeyo?', meaning: 'Who is this person?' },
+                { korean: '그 사람은 누구였어요?', romanized: 'geu sarameun nuguyeosseoyo?', meaning: 'Who was that person?' },
+                { korean: '누가 전화했어요?', romanized: 'nuga jeonhwahasseoyo?', meaning: 'Who called?' },
+                { korean: '누구를 만났어요?', romanized: 'nugureul mannasseoyo?', meaning: 'Who did you meet?' },
+                { korean: '누가 도와줬어요?', romanized: 'nuga dowajwosseoyo?', meaning: 'Who helped you?' },
+                { korean: '누구랑 이야기했어요?', romanized: 'nugurang iyagihaesseoyo?', meaning: 'Who did you talk with?' },
+                { korean: '누가 그랬어요?', romanized: 'nuga geuraesseoyo?', meaning: 'Who said that?' },
+                { korean: '누구를 기다려요?', romanized: 'nugureul gidaryeoyo?', meaning: 'Who are you waiting for?' },
+                { korean: '누가 선생님이에요?', romanized: 'nuga seonsaengnimieyo?', meaning: 'Who is the teacher?' }
             ],
-            placeQuestions: [
-                { korean: '화장실이 어디예요?', romanized: 'hwajangsiri eodiyeyo?', meaning: 'Where is the bathroom?' },
-                { korean: '역이 어디에 있어요?', romanized: 'yeogi eodie isseoyo?', meaning: 'Where is the station?' },
-                { korean: '은행이 어디에 있나요?', romanized: 'eunhaengi eodie innayo?', meaning: 'Where is the bank?' },
-                { korean: '공원이 어디입니까?', romanized: 'gongwoni eodiimnikka?', meaning: 'Where is the park? (formal)' },
-                { korean: '어디에서 한국어를 배웠어요?', romanized: 'eodieseo hangugeoreul baewosseoyo?', meaning: 'Where did you learn Korean?' },
-                { korean: '어디로 여행 갈 거예요?', romanized: 'eodiro yeohaeng gal geoyeyo?', meaning: 'Where will you travel to?' }
+            identityQuestions: [
+                { korean: '누구신지 아세요?', romanized: 'nugusinji aseyo?', meaning: 'Do you know who they are?' },
+                { korean: '이 분은 누구세요?', romanized: 'i buneun nuguseyo?', meaning: 'Who is this person? (respectful)' },
+                { korean: '누구라고 생각해요?', romanized: 'nugurago saenggakaeyo?', meaning: 'Who do you think it is?' },
+                { korean: '누구인지 모르겠어요', romanized: 'nuguinji moreugesseoyo', meaning: 'I don\'t know who it is' },
+                { korean: '누구인지 맞혀 보세요', romanized: 'nuguinji matchyeo boseyo', meaning: 'Try to guess who it is' },
+                { korean: '누구처럼 보여요?', romanized: 'nugucheoreom boyeoyo?', meaning: 'Who do I look like?' }
             ],
-            activityQuestions: [
-                { korean: '주말에 어디 갈 거예요?', romanized: 'jumare eodi gal geoyeyo?', meaning: 'Where will you go on the weekend?' },
-                { korean: '어제 어디에 갔어요?', romanized: 'eoje eodie gasseoyo?', meaning: 'Where did you go yesterday?' },
-                { korean: '내일 어디에서 만날 거예요?', romanized: 'naeil eodieseo mannal geoyeyo?', meaning: 'Where will we meet tomorrow?' },
-                { korean: '지금 어디에 가고 싶어요?', romanized: 'jigeum eodie gago sipeoyo?', meaning: 'Where do you want to go now?' },
-                { korean: '어디에서 운동해요?', romanized: 'eodieseo undonghaeyo?', meaning: 'Where do you exercise?' },
-                { korean: '어디에서 점심 먹을 거예요?', romanized: 'eodieseo jeomsim meogeul geoyeyo?', meaning: 'Where will you eat lunch?' }
+            relationshipQuestions: [
+                { korean: '누구 친구예요?', romanized: 'nugu chinguyeyo?', meaning: 'Whose friend is it?' },
+                { korean: '누구 가족이에요?', romanized: 'nugu gajogieyo?', meaning: 'Whose family is it?' },
+                { korean: '누구 동생이에요?', romanized: 'nugu dongsaengieyo?', meaning: 'Whose younger sibling is it?' },
+                { korean: '누구 부인인가요?', romanized: 'nugu buiningayo?', meaning: 'Whose wife is she?' },
+                { korean: '누구 아들이에요?', romanized: 'nugu adeurieyo?', meaning: 'Whose son is he?' },
+                { korean: '누구 딸이에요?', romanized: 'nugu ttarieyo?', meaning: 'Whose daughter is she?' }
             ]
         };
 
@@ -538,15 +538,15 @@
 
         function generateCards() {
             const basicQuestionsGrid = document.getElementById('basic-questions-grid');
-            const locationQuestionsGrid = document.getElementById('location-questions-grid');
-            const placeQuestionsGrid = document.getElementById('place-questions-grid');
-            const activityQuestionsGrid = document.getElementById('activity-questions-grid');
+            const personQuestionsGrid = document.getElementById('person-questions-grid');
+            const identityQuestionsGrid = document.getElementById('identity-questions-grid');
+            const relationshipQuestionsGrid = document.getElementById('relationship-questions-grid');
             
             let index = 0;
             basicQuestionsGrid.innerHTML = koreanContent.basicQuestions.map(item => createCard(item, index++)).join('');
-            locationQuestionsGrid.innerHTML = koreanContent.locationQuestions.map(item => createCard(item, index++)).join('');
-            placeQuestionsGrid.innerHTML = koreanContent.placeQuestions.map(item => createCard(item, index++)).join('');
-            activityQuestionsGrid.innerHTML = koreanContent.activityQuestions.map(item => createCard(item, index++)).join('');
+            personQuestionsGrid.innerHTML = koreanContent.personQuestions.map(item => createCard(item, index++)).join('');
+            identityQuestionsGrid.innerHTML = koreanContent.identityQuestions.map(item => createCard(item, index++)).join('');
+            relationshipQuestionsGrid.innerHTML = koreanContent.relationshipQuestions.map(item => createCard(item, index++)).join('');
             
             addAudioEventListeners();
             addCanvasEventListeners();
@@ -604,9 +604,9 @@
             
             const allItems = [
                 ...koreanContent.basicQuestions, 
-                ...koreanContent.locationQuestions, 
-                ...koreanContent.placeQuestions, 
-                ...koreanContent.activityQuestions
+                ...koreanContent.personQuestions, 
+                ...koreanContent.identityQuestions, 
+                ...koreanContent.relationshipQuestions
             ];
             let index = 0;
             
@@ -644,7 +644,7 @@
             speakNext();
         }
 
-        // ... (rest of your canvas and drawing functions remain the same)
+        // ... (canvas and drawing functions remain the same)
         let isDrawing = false;
         let canvasesContexts = [];
         let lastX = 0;
